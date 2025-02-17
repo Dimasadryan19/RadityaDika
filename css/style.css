@@ -1,0 +1,252 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700&display=swap');
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* NAVIGATION */
+nav {
+  background: #222;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background: #444;
+  color: #fff;
+}
+
+/* MAIN CONTENT */
+main {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CARD - Ukuran lebih besar */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 40px;
+  border-left: 6px solid #555;
+  max-width: 90%;
+  width: 100%;
+  min-height: 70vh;  /* Agar card tinggi sesuai layar */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Menjaga konten di bagian atas */
+  justify-content: flex-start; /* Memastikan konten tidak di tengah */
+}
+
+.card h2 {
+  text-align: center;
+  color: #222;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: 'Merriweather', serif;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* IMAGE */
+.card img {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px; /* Gambar lebih besar */
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #888;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-weight: bold;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .header {
+    font-size: 22px;
+    padding: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 30px;
+    min-height: 60vh; /* Menyesuaikan layar kecil */
+  }
+
+  .card img {
+    max-width: 400px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Judul film */
+.film-item h3 {
+  font-size: 20px;
+  color: #222;
+  font-weight: bold;
+}
+
+.film {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50vh; /* Menyesuaikan tinggi minimum agar iframe bisa berada di tengah */
+  text-align: center;
+  position: relative;
+}
+
+.film iframe {
+  width: 80%; /* Menggunakan persentase agar responsif */
+  max-width: 540px; /* Batasi ukuran maksimum */
+  aspect-ratio: 16 / 9; /* Menjaga rasio 16:9 agar proporsional */
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .film iframe {
+    max-width: 100%;
+    height: 315px;
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Gaya untuk setiap link */
+.social-links a {
+  display: flex;
+  align-items: center;  /* Ikon dan teks sejajar */
+  gap: 12px; /* Jarak antara ikon dan teks */
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out, opacity 0.3s;
+  width: fit-content; /* Mengikuti panjang teks */
+}
+
+/* Ukuran ikon */
+.social-links img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain; /* Pastikan ikon tidak terdistorsi */
+}
+
+/* Efek hover */
+.social-links a:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.page-transition {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
